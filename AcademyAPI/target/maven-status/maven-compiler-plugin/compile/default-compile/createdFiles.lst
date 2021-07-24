@@ -1,0 +1,9 @@
+com\cds\academy\config\Configuration$1.class
+com\cds\academy\model\Message.class
+com\cds\academy\controllers\Controller.class
+com\cds\academy\repository\Messages.class
+com\cds\academy\model\User.class
+com\cds\academy\AcademyAPI.class
+com\cds\academy\AcademyAPI$1.class
+com\cds\academy\config\Configuration.class
+com\cds\academy\repository\Users.class
