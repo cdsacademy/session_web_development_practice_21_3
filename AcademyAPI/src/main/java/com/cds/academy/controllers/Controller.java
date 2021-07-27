@@ -205,19 +205,24 @@ public class Controller {
 		}
 
 		List<Hastag> hashtags = hastagsRepository.findAll();
-		Hastag hastag = hashtags.get(0);
-		HashMap<String, Integer> map = hastag.getList();
+		try {
+			Hastag hastag = hashtags.get(0);
+			HashMap<String, Integer> map = hastag.getList();
 
-		for (String match : allMatches) {
-			if (map.containsKey(match)) {
-				map.replace(match, map.get(match) + 1);
-			} else {
-				map.put(match, 1);
+			for (String match : allMatches) {
+				if (map.containsKey(match)) {
+					map.replace(match, map.get(match) + 1);
+				} else {
+					map.put(match, 1);
+				}
 			}
-		}
 
-		hastag.setList(map);
-		hastagsRepository.save(hastag);
+			hastag.setList(map);
+			hastagsRepository.save(hastag);
+		} catch (Exception e) {
+		
+		}
+		
 		message.setLikesUserID(new HashSet<String>());
 		message.setUserUsername(u.getUsername());
 		message.setUserFullname(u.getFullname());
